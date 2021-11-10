@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         field: "first_name",
         validate:{
-          isAlpha: true,
           notNull: true,
           notEmpty: true
         }
@@ -30,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         field: "last_name",
         validate:{
-          isAlpha: true,
           notNull: true,
           notEmpty: true
         }
