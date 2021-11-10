@@ -1,5 +1,5 @@
 "use strict";
-
+const { nextDay } = require("date-fns")
 const {isBefore} = require('date-fns');
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
@@ -40,7 +40,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: true,
         validate:{
-          isAlpha: true,
           notNull: true,
           notEmpty: true,
           isEmail:true

@@ -6,8 +6,8 @@ const bodyParser = express.json();
 
 app.use(bodyParser);
 
-app.get('/users', userController.getUsers)
+app.get('/users', userController.getUsers);
 
-app.post('/user')
+app.post('/user', userController.createUser);
 
 module.exports = app;
