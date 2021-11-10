@@ -25,7 +25,8 @@ module.exports = {
       },
       password: {
         type: Sequelize.STRING(64),
-        allowNull: false
+        allowNull: false,
+        field: 'password_hash'
       },
       birthday: {
         type: Sequelize.DATEONLY,
@@ -33,6 +34,7 @@ module.exports = {
       },
       isMale: {
         type: Sequelize.BOOLEAN,
+        field: 'is_male',
         allowNull: false
       },
       createdAt: {
