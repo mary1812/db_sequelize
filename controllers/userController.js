@@ -1,7 +1,14 @@
 const {User} = require('../models')
 
-module.exports.getUsers = async(req, res) => { 
-  res.send('users not found')
+module.exports.getUsers = async(req, res,next) => { 
+  try {
+    const users = await User.findAll();
+
+    res.send(users);
+  } catch (error) {
+    next(error)
+  }
+
 }
 
 module.exports.createUser = async(req,res,next) =>{
