@@ -10,4 +10,6 @@ app.get('/users', userController.getUsers);
 
 app.post('/user', userController.createUser);
 
+app.patch('/user/:id', userController.updateUser);
+
 module.exports = app;

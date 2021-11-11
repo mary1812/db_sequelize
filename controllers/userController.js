@@ -29,3 +29,17 @@ module.exports.createUser = async(req,res,next) =>{
     next(error);
   }
 }
+
+module.exports.updateUser = async(req,res,next) => {
+  try {
+    const {body, params:{id}} = req;
+
+    const updatedUser = await User.update(body, {
+      where: {
+        id: id
+      } 
+    })
+  } catch (error) {
+    next(error)
+  }
+}
