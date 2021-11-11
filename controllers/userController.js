@@ -2,7 +2,11 @@ const {User} = require('../models')
 
 module.exports.getUsers = async(req, res,next) => { 
   try {
-    const users = await User.findAll();
+    const users = await User.findAll({
+      attributes:{ 
+        exclude: ['password']
+      }
+    });
 
     res.send(users);
   } catch (error) {
